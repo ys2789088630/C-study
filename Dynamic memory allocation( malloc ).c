@@ -1,3 +1,5 @@
+//C99前,数组的大小用常量或常量表达式来指定. 
+//const int a 是常变量,属于变量,只是值确定 
 //C99前使用变量给数组定义大小,必须用malloc.malloc返回void,申请的是Byte
 //sizeof() 获取单位类型所占字节
 //malloc后必须用free(),free失败返回0或NULL
