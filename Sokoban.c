@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include <stdlib.h>
+
 #include <conio.h>
 
 char g_arr[10][10] = {
@@ -154,9 +156,9 @@ int main(){
     refresh();
     while (1) {
         refresh();
-        int cmd =_getch;
+        int cmd =_getch();
         int ret = move(cmd);
-        refresh;
+        refresh();
         if (ret != 0) {
             printf("WIN\n");
             break;
