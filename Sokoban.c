@@ -149,9 +149,6 @@ else if( cmd == 100) {//D
             }
         }
     }
-
-}
-
 int main(){
     refresh();
     while (1) {
