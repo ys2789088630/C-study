@@ -1,27 +1,20 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: gcc.exe build active file",
-            "command": "C:\\mingw64\\bin\\gcc.exe",
+            "label": "build_all",
+            "type": "shell",
+            "command": "gcc",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "test.c",
+                "contact.c",
+                "-o", "output/test.exe"
             ],
-            "options": {
-                "cwd": "C:/mingw64/bin"
-            },
-            "problemMatcher": ["$gcc"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: C:\\mingw64\\bin\\gcc.exe"
+            "problemMatcher": ["$gcc"]
         }
     ]
 }
