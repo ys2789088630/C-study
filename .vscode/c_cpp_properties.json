@@ -14,6 +14,7 @@
             "cStandard": "c17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "windows-gcc-x64"
+<<<<<<< HEAD
         },
         {
             "name": "C++",
@@ -29,6 +30,8 @@
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x64"
+=======
+>>>>>>> 1b3ecd2 (Initial commit)
         }
     ],
     "version": 4
