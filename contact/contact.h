@@ -1,13 +1,14 @@
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include <stdlib.h>//qsort()
 
 #define MAX 100
 #define MAX_NAME 20
 #define MAX_SEX 10
 #define MAX_TELE 12
 #define MAX_ADDR 30
-//ç±»å‹çš„å£°æ˜
+//ÀàĞÍµÄÉùÃ÷
 typedef struct PeoInfo
 {
     char name[MAX_NAME];
@@ -17,14 +18,24 @@ typedef struct PeoInfo
     char addr[MAX_ADDR];
 }PeoInfo;
 
-//é€šè®¯å½•
+//Í¨Ñ¶Â¼
 typedef struct Contact
 {
     PeoInfo data[MAX];
-    int count;//è®°å½•å½“å‰é€šè®¯å½•ä¸­å®é™…äººæ•°
+    int count;//¼ÇÂ¼µ±Ç°Í¨Ñ¶Â¼ÖĞÊµ¼ÊÈËÊı
 }Contact;
 
 void InitContact(Contact* pc);
+
 void AddContact(Contact* pc);
+
 void ShowContact(const Contact* pc);
+
 void DelContact(Contact* pc);
+
+void SearchContact(const Contact* pc);
+
+void ModifyContact(Contact* pc);
+
+//°´ĞÕÃûÅÅĞò
+void SortContact(Contact* pc);
