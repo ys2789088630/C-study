@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\test\\multiple_files\\contact\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E75D31A-6BA4-1546-AEA9-51A2CC7DD34E}|contact.vcxproj|C:\\test\\multiple_files\\contact\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9E75D31A-6BA4-1546-AEA9-51A2CC7DD34E}|contact.vcxproj|solutionrelative:test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9E75D31A-6BA4-1546-AEA9-51A2CC7DD34E}|contact.vcxproj|C:\\test\\multiple_files\\contact\\contact.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9E75D31A-6BA4-1546-AEA9-51A2CC7DD34E}|contact.vcxproj|solutionrelative:contact.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E75D31A-6BA4-1546-AEA9-51A2CC7DD34E}|contact.vcxproj|C:\\test\\multiple_files\\contact\\contact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9E75D31A-6BA4-1546-AEA9-51A2CC7DD34E}|contact.vcxproj|solutionrelative:contact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E75D31A-6BA4-1546-AEA9-51A2CC7DD34E}|contact.vcxproj|C:\\test\\multiple_files\\contact\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9E75D31A-6BA4-1546-AEA9-51A2CC7DD34E}|contact.vcxproj|solutionrelative:test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "contact.h",
               "DocumentMoniker": "C:\\test\\multiple_files\\contact\\contact.h",
               "RelativeDocumentMoniker": "contact.h",
               "ToolTip": "C:\\test\\multiple_files\\contact\\contact.h",
               "RelativeToolTip": "contact.h",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAADcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-01-04T12:13:57.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "contact.c",
               "DocumentMoniker": "C:\\test\\multiple_files\\contact\\contact.c",
               "RelativeDocumentMoniker": "contact.c",
               "ToolTip": "C:\\test\\multiple_files\\contact\\contact.c",
               "RelativeToolTip": "contact.c",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAAAJsAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAAANUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-01-04T11:35:10.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "test.c",
               "DocumentMoniker": "C:\\test\\multiple_files\\contact\\test.c",
               "RelativeDocumentMoniker": "test.c",
               "ToolTip": "C:\\test\\multiple_files\\contact\\test.c",
               "RelativeToolTip": "test.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-01-04T11:35:05.388Z",
               "EditorCaption": ""

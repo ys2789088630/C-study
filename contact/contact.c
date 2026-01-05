@@ -1,21 +1,75 @@
 #include "contact.h"
 
+//静态版本
+//void InitContact(Contact* pc)
+//{
+//    assert(pc);
+//    pc->count = 0;
+//    memset(pc->data, 0, sizeof(pc->data));
+//}
 
-void InitContact(Contact* pc)
+//动态版本
+int InitContact(Contact* pc)
 {
     assert(pc);
     pc->count = 0;
-    memset(pc->data, 0, sizeof(pc->data));
+    pc->data = (PeoInfo*)calloc(DEFAULT_SZ, sizeof(PeoInfo));
+    if (NULL == pc->data)
+    {
+        printf("%s\n", strerror(errno));
+        return 1;
+    }
+    pc->capacity = DEFAULT_SZ;
+    return 0;
 }
+//静态版本
+//void AddContact(Contact* pc)
+//{
+//    assert(pc);
+//    if (pc->count == MAX)
+//    {
+//        printf("通讯录已满,无法添加\n");
+//        return;
+//    }
+//    printf("请输入名字:>");
+//    scanf("%s", pc->data[pc->count].name);
+//    printf("请输入年龄:>");
+//    scanf("%d", &(pc->data[pc->count].age));
+//    printf("请输入性别:>");
+//    scanf("%s", pc->data[pc->count].sex);
+//    printf("请输入电话:>");
+//    scanf("%s", pc->data[pc->count].tele);
+//    printf("请输入地址:>");
+//    scanf("%s", pc->data[pc->count].addr);
+//
+//    pc->count++;
+//    printf("增加成功\n");
+//}
 
+void CheckCapacity(Contact* pc)
+{
+    if (pc->count == pc->capacity)
+    {
+        PeoInfo* ptr = (PeoInfo*)realloc(pc->data, (pc->capacity + INC_SZ) * sizeof(PeoInfo));
+        if (NULL == ptr)
+        {
+            printf("AddContact: %s\n", strerror(errno));
+        }
+        else
+        {
+            pc->data = ptr;
+            pc->capacity += INC_SZ;
+            printf("扩容成功\n");
+        }
+        return;
+    }
+}
+//动态版本
 void AddContact(Contact* pc)
 {
     assert(pc);
-    if (pc->count == MAX)
-    {
-        printf("通讯录已满,无法添加\n");
-        return;
-    }
+    //扩容
+    CheckCapacity(pc);
     printf("请输入名字:>");
     scanf("%s", pc->data[pc->count].name);
     printf("请输入年龄:>");
@@ -154,4 +208,11 @@ void SortContact(Contact* pc)
     assert(pc);
     qsort(pc->data, pc->count, sizeof(PeoInfo), cmp_peo_by_name);
     printf("排序成功\n");
+}
+
+void DestroyContact(Contact* pc)
+{
+    assert(pc);
+    free(pc->data);
+    pc->data = NULL;
 }

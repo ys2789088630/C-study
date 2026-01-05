@@ -8,7 +8,11 @@
 #define MAX_SEX 10
 #define MAX_TELE 12
 #define MAX_ADDR 30
+
+#define DEFAULT_SZ 3
+#define INC_SZ 2
 //类型的声明
+
 typedef struct PeoInfo
 {
     char name[MAX_NAME];
@@ -19,13 +23,22 @@ typedef struct PeoInfo
 }PeoInfo;
 
 //通讯录
-typedef struct Contact
+//静态版本
+/*typedef struct Contact
 {
     PeoInfo data[MAX];
     int count;//记录当前通讯录中实际人数
+}Contact;*/
+
+//动态版本
+typedef struct Contact
+{
+    PeoInfo* data;
+    int count;//记录当前通讯录中实际人数
+    int capacity;//当前通讯录的容量
 }Contact;
 
-void InitContact(Contact* pc);
+int InitContact(Contact* pc);
 
 void AddContact(Contact* pc);
 
@@ -39,3 +52,5 @@ void ModifyContact(Contact* pc);
 
 //按姓名排序
 void SortContact(Contact* pc);
+
+void DestroyContact(Contact* pc);
