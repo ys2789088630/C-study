@@ -43,6 +43,7 @@ int main()
                 SortContact(&con);
                 break;
             case 0:
+                SaveContact(&con);
                 DestroyContact(&con);
                 printf("�˳�ͨѶ¼\n");
                 break;

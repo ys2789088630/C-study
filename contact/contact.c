@@ -1,5 +1,68 @@
 #include "contact.h"
 
+//动态版本
+
+void CheckCapacity(Contact* pc)
+{
+    if (pc->count == pc->capacity)
+    {
+        PeoInfo* ptr = (PeoInfo*)realloc(pc->data, (pc->capacity + INC_SZ) * sizeof(PeoInfo));
+        if (NULL == ptr)
+        {
+            printf("AddContact: %s\n", strerror(errno));
+        }
+        else
+        {
+            pc->data = ptr;
+            pc->capacity += INC_SZ;
+            printf("扩容成功\n");
+        }
+        return;
+    }
+}
+
+void AddContact(Contact* pc)
+{
+    assert(pc);
+    //扩容
+    CheckCapacity(pc);
+    printf("请输入名字:>");
+    scanf("%s", pc->data[pc->count].name);
+    printf("请输入年龄:>");
+    scanf("%d", &(pc->data[pc->count].age));
+    printf("请输入性别:>");
+    scanf("%s", pc->data[pc->count].sex);
+    printf("请输入电话:>");
+    scanf("%s", pc->data[pc->count].tele);
+    printf("请输入地址:>");
+    scanf("%s", pc->data[pc->count].addr);
+
+    pc->count++;
+    printf("增加成功\n");
+}
+
+
+
+void LoadContact(Contact* pc)
+{
+    FILE* pfRead = fopen("contact.txt", "rb");
+    if (NULL == pfRead)
+    {
+        perror("LoadContact");
+        return;
+    }
+    PeoInfo tmp = { 0 };
+    while (fread(&tmp, sizeof(PeoInfo), 1, pfRead))
+    {
+        CheckCapacity(pc);
+
+        pc->data[pc->count] = tmp;
+        ++pc->count;
+    }
+    fclose(pfRead);
+    pfRead = NULL;
+}
+
 //静态版本
 //void InitContact(Contact* pc)
 //{
@@ -20,6 +83,8 @@ int InitContact(Contact* pc)
         return 1;
     }
     pc->capacity = DEFAULT_SZ;
+    //加载文件信息到通讯录
+    LoadContact(pc);
     return 0;
 }
 //静态版本
@@ -46,44 +111,7 @@ int InitContact(Contact* pc)
 //    printf("增加成功\n");
 //}
 
-void CheckCapacity(Contact* pc)
-{
-    if (pc->count == pc->capacity)
-    {
-        PeoInfo* ptr = (PeoInfo*)realloc(pc->data, (pc->capacity + INC_SZ) * sizeof(PeoInfo));
-        if (NULL == ptr)
-        {
-            printf("AddContact: %s\n", strerror(errno));
-        }
-        else
-        {
-            pc->data = ptr;
-            pc->capacity += INC_SZ;
-            printf("扩容成功\n");
-        }
-        return;
-    }
-}
-//动态版本
-void AddContact(Contact* pc)
-{
-    assert(pc);
-    //扩容
-    CheckCapacity(pc);
-    printf("请输入名字:>");
-    scanf("%s", pc->data[pc->count].name);
-    printf("请输入年龄:>");
-    scanf("%d", &(pc->data[pc->count].age));
-    printf("请输入性别:>");
-    scanf("%s", pc->data[pc->count].sex);
-    printf("请输入电话:>");
-    scanf("%s", pc->data[pc->count].tele);
-    printf("请输入地址:>");
-    scanf("%s", pc->data[pc->count].addr);
 
-    pc->count++;
-    printf("增加成功\n");
-}
 
 void ShowContact(const Contact* pc)
 {
@@ -215,4 +243,21 @@ void DestroyContact(Contact* pc)
     assert(pc);
     free(pc->data);
     pc->data = NULL;
+}
+
+void SaveContact(const Contact* pc)
+{
+    assert(pc);
+    FILE* pfWrite = fopen("contact.txt", "wb");
+    if (NULL == pfWrite)
+    {
+        perror("SaveContact");
+        return;
+    }
+    //写文件-binary
+    int i = 0;
+    for (i = 0; i < pc->count; ++i)
+    {
+        fwrite(pc->data + i, sizeof(PeoInfo), 1, pfWrite);
+    }
 }
