@@ -34,8 +34,7 @@
               "RelativeToolTip": "contact.h",
               "ViewState": "AgIAADUAAAAAAAAAAAAAADcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-04T12:13:57.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T12:13:57.594Z"
             },
             {
               "$type": "Document",
@@ -45,7 +44,7 @@
               "RelativeDocumentMoniker": "contact.c",
               "ToolTip": "C:\\test\\multiple_files\\contact\\contact.c",
               "RelativeToolTip": "contact.c",
-              "ViewState": "AgIAAMcAAAAAAAAAAAAAANUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAANUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-01-04T11:35:10.998Z",
               "EditorCaption": ""
@@ -60,8 +59,7 @@
               "RelativeToolTip": "test.c",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAC0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-01-04T11:35:05.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-04T11:35:05.388Z"
             }
           ]
         }
